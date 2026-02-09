@@ -2,9 +2,9 @@ const answers_no = [
     "No",
     "Are you sure?",
     "Are you really sure??",
+    "But wait... remember all those times you farted and I still loved you? 💨😂",
     "Think again, Koala! 🐨",
     "But I'm your Bear! 🐻",
-    "Even when you toot, I still think you're cute! 💨😂",
     "Please give me a chance!",
     "Don't be so cold, Koala! ❄️",
     "This Panda is sad now 🐼😢",
@@ -15,6 +15,8 @@ const answers_no = [
     "You're breaking my fuzzy little heart! 💔",
     "Ok, let's just start over..."
 ];
+
+const FART_JOKE_INDEX = 3; // Index of the fart joke message
 
 const no_button = document.getElementById('no-button');
 const yes_button = document.getElementById('yes-button');
@@ -29,7 +31,18 @@ no_button.addEventListener('click', () => {
         banner.src = "public/images/no.gif";
         refreshBanner();
     }
+    
     clicks++;
+    
+    // Special fart joke GIF
+    if (i === FART_JOKE_INDEX) {
+        banner.src = "public/images/fart.gif";
+        refreshBanner();
+    } else if (clicks > 0 && i !== FART_JOKE_INDEX) {
+        // Keep no.gif for other states
+        banner.src = "public/images/no.gif";
+        refreshBanner();
+    }
     
     // Increase yes button size gradually
     const sizes = [30, 40, 35, 45, 50];
