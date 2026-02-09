@@ -25,22 +25,19 @@ let size = 50;
 let clicks = 0;
 
 no_button.addEventListener('click', () => {
-    // Change banner source on first click
     let banner = document.getElementById('banner');
-    if (clicks === 0) {
-        banner.src = "public/images/no.gif";
-        refreshBanner();
-    }
     
+    // Increment counter first
     clicks++;
     
-    // Special fart joke GIF
+    // Change GIF based on current message index (i)
     if (i === FART_JOKE_INDEX) {
-        banner.src = "public/images/fart.gif";
+        // Show fart GIF for fart joke
+        banner.src = "public/images/fart.gif?v=" + Date.now();
         refreshBanner();
-    } else if (clicks > 0 && i !== FART_JOKE_INDEX) {
-        // Keep no.gif for other states
-        banner.src = "public/images/no.gif";
+    } else if (clicks === 1) {
+        // First click - show sad/no GIF
+        banner.src = "public/images/no.gif?v=" + Date.now();
         refreshBanner();
     }
     
@@ -66,7 +63,7 @@ no_button.addEventListener('click', () => {
         yes_button.style.width = "50px";
         size = 50;
         clicks = 0;
-        banner.src = "public/images/mid.gif";
+        banner.src = "public/images/mid.gif?v=" + Date.now();
         refreshBanner();
     }
 });
