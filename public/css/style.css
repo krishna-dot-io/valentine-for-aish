@@ -1,0 +1,143 @@
+body {
+    background: linear-gradient(135deg, #ffeef8 0%, #ffe5f0 100%);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    flex-direction: row;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#no-button {
+    color: white;
+    background-color: #ff4757;
+    height: 50px !important;
+    width: auto;
+    padding: 0 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
+}
+
+#no-button:hover {
+    background-color: #ff3838;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 71, 87, 0.4);
+}
+
+#yes-button {
+    color: white;
+    border: none;
+    background-color: #2ecc71;
+    cursor: pointer;
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+}
+
+#yes-button:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+}
+
+#yes-button p,
+#no-button p {
+    margin: 0;
+    object-fit: contain;
+}
+
+/* Make responsive for mobile */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+    
+    .buttons {
+        gap: 15px;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 30px;
+    text-align: center;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
+}
+
+#question-heading {
+    color: #ff4757;
+    font-size: 28px;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(255, 71, 87, 0.2);
+}
+
+@media (max-width: 768px) {
+    #question-heading {
+        font-size: 22px;
+    }
+}
+
+.message {
+    display: none;
+    margin-top: 20px;
+}
+
+.message h2 {
+    color: #2ecc71;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.message h6 {
+    color: #666;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.banner-gif {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.banner-gif img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+    .banner-gif img {
+        max-width: 250px;
+    }
+}
